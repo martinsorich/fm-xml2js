@@ -1,0 +1,26 @@
+{
+  "name": "fmp-xml",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "if [ \"$NODE_ENV\" = \"development\" ]; then npm run start-proxy; else npm run start-prod; fi",
+    "start-proxy": "concurrently \"local-ssl-proxy --source 3030 --target 443\"  \"node src/app/index.js\"",
+    "start-prod": "node src/app/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "btoa": "^1.2.1",
+    "dotenv": "^16.4.5",
+    "form-data": "^4.0.0",
+    "iconv-lite": "^0.6.3",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "local-ssl-proxy": "^2.0.5"
+  }
+}
