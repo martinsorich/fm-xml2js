@@ -20,10 +20,6 @@ In the command line run `npm start`
 - The script result is returned in the FM DAPI response returning any errors.
 - The XML is then read using the path defined above and converted to a JavaScript object using the `iconv-lite` and `XML2JS` packages.
 
-## Why is this Important?
-
-JavaScript objects are easier to work with than XML.
-
 ## Discoveries
 
 Because the XML file needs to be saved on the FileMaker Server environment, the `Save a Copy as XML` script step must be included within a script that is run as a `Perform Script on Server` script step. This allows the script to save to a designated server file path `/FileMaker Server/Data/Documents`.
